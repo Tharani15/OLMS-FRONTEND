@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Instructor Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Times New Roman", serif;
+      background-color: rgba(255,255,255,0.95); 
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #000;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 0;
+      background-color: rgba(255,255,255,0.95);
+      position: relative;
+    }
+
+    .logo {
+      position: absolute;
+      left: 30px;
+      top: 15px;
+    }
+
+    .logo img {
+      height: 50px;
+      width: auto;
+    }
+
+    header h1 {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: rgba(255,255,255,0.9);
+      padding: 12px 0;
+      gap: 150px;
+      border-bottom: 2px solid #aaa;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .main {
+      max-width: 1100px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 40px 40px 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .welcome-box {
+      text-align: center;
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 50px;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .card {
+      background-color: #f0f0f0;
+      flex: 1;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      min-height: 260px;
+      position: relative;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .course-count {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .click-view {
+      font-size: 16px;
+      text-decoration: underline;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .progress-circle {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 10px;
+    }
+
+    .progress-circle svg {
+      width: 150px;
+      height: 150px;
+      transform: rotate(-90deg);
+    }
+
+    .progress-circle circle {
+      fill: none;
+      stroke-width: 10;
+    }
+
+    .bg {
+      stroke: #e0e0e0;
+    }
+
+    .progress {
+      stroke: #3498db;
+      stroke-dasharray: 377;
+      stroke-dashoffset: 377;
+      transition: stroke-dashoffset 0.5s ease;
+    }
+
+    .percentage {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .task-list {
+      text-align: left;
+      font-size: 16px;
+      padding-left: 20px;
+    }
+
+footer {
+  position: relative;
+  background-image: url('images/portal.jpg'); /* Same image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #000;
+  padding: 30px 40px;
+  z-index: 1;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.8); /* Soft white overlay */
+  z-index: 0;
+}
+
+footer > * {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+.footer-section h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+.footer-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.contact-info p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* Social Media Row */
+.footer-middle {
+  text-align: center;
+  margin: 30px 0 10px;
+}
+
+.social-icons-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.social-item {
+  text-align: center;
+}
+
+.icon-wrapper {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+.icon-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+
+.icon-wrapper img:hover {
+  transform: scale(1.1);
+}
+
+.social-item p {
+  font-size: 12px;
+  margin: 0;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 13px;
+  margin-top: 10px;
+  color: #000;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #aaa;
+  margin: 20px 0;
+}
+
+header {
+  position: relative;
+  background-image: url('images/portal.jpg'); /* Rename your uploaded image to this or update path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 30px 0;
+  color: #000;
+  z-index: 1;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.8); /* Soft overlay */
+  z-index: 0;
+}
+
+header > * {
+  position: relative;
+  z-index: 1;
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="C:\Users\Home\Downloads\samples\images/logo.png" alt="LMS Logo">
+    </div>
+    <h1>INSTRUCTOR</h1>
+  </header>
+
+  <nav>
+    <a href="#">DASHBOARD</a>
+    <a href="#">MY COURSES</a>
+    <a href="#">QUIZ CREATION</a>
+    <a href="#">SETTINGS</a>
+  </nav>
+
+  <div class="main">
+    <div class="welcome-box">
+      <p>Welcome Back Professor Sunil Sharma !!</p>
+      <p>Your student's had done 80% of their work</p>
+      <p>Progress is really GOOD !!</p>
+    </div>
+
+    <div class="cards">
+      <!-- Left Card -->
+      <div class="card">
+        <h3>TOTAL COURSES<br>CREATED BY YOU</h3>
+        <div class="course-count">7 [ seven ]</div>
+        <div class="click-view" onclick="alert('Viewing all created courses...')">Click to View</div>
+      </div>
+
+      <!-- Center Card with Progress Circle -->
+      <div class="card">
+        <div class="progress-circle">
+          <svg>
+            <circle class="bg" cx="75" cy="75" r="60"/>
+            <circle class="progress" cx="75" cy="75" r="60"/>
+          </svg>
+          <div class="percentage">0%</div>
+        </div>
+        <h3>TASK PROGRESS</h3>
+      </div>
+
+      <!-- Right Card -->
+      <div class="card">
+        <h3>TASK TO BE COMPLETE BY TODAY</h3>
+        <ul class="task-list">
+          <li>Quizzes to review</li>
+          <li>Course drafts not published</li>
+          <li>2 quizzes ungraded</li>
+          <li>1 course draft pending</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+  <!-- Row 1: Guidelines and Contact -->
+  <div class="footer-top">
+    <div class="footer-section">
+      <h4>TEACHING GUIDELINES</h4>
+      <p>Best practices for creating engaging courses and assessments on Learnovia.</p>
+      <p><strong>Examples:</strong></p>
+      <ul>
+        <li>Keep videos short and focused</li>
+        <li>Add quizzes after each module</li>
+        <li>Follow content quality standards</li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <div class="contact-info">
+        <p>📧 Email: support@learnovia.com</p>
+        <p>📞 Phone: +91 98765 44120</p>
+        <p>📍 Location: Learnovia HQ, Chennai, India</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Horizontal Line -->
+  <hr>
+
+  <!-- Row 2: Social Icons -->
+  <div class="footer-middle">
+    <h4>FOLLOW US ON</h4>
+    <div class="social-icons-row">
+      <div class="social-item">
+        <div class="icon-wrapper"><img src="images/fb.png" alt="Facebook"></div>
+        <p>Facebook</p>
+      </div>
+      <div class="social-item">
+        <div class="icon-wrapper"><img src="images/ig.png" alt="Instagram"></div>
+        <p>Instagram</p>
+      </div>
+      <div class="social-item">
+        <div class="icon-wrapper"><img src="images/wp.png" alt="WhatsApp"></div>
+        <p>WhatsApp</p>
+      </div>
+      <div class="social-item">
+        <div class="icon-wrapper"><img src="images/tg.png" alt="Telegram"></div>
+        <p>Telegram</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Horizontal Line -->
+  <hr>
+
+  <!-- Row 3: Copyright -->
+  <div class="footer-bottom">
+    © 2025 Learnovia LMS. All rights reserved.
+  </div>
+</footer>
+s
+
+  <!-- JS for Circle Animation -->
+  <script>
+    const percentage = 63;
+    const circle = document.querySelector(".progress");
+    const text = document.querySelector(".percentage");
+    const radius = 60;
+    const circumference = 2 * Math.PI * radius;
+
+    circle.style.strokeDasharray = `${circumference}`;
+    circle.style.strokeDashoffset = `${circumference}`;
+
+    let current = 0;
+    const speed = 15;
+
+    const interval = setInterval(() => {
+      if (current <= percentage) {
+        const offset = circumference - (current / 100) * circumference;
+        circle.style.strokeDashoffset = offset;
+        text.textContent = current + "%";
+        current++;
+      } else {
+        clearInterval(interval);
+      }
+    }, speed);
+  </script>
+
+</body>
+</html>
