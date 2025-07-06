@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lernovia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Cambria, Georgia, 'Times New Roman', Times, serif;
+    }
+
+    body {
+      background: #f5f6fa;
+      color: #333;
+    }
+
+    header {
+      position: relative;
+      background-image: url('images/portal.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 2rem 1rem;
+      color: #1A237E;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(255, 255, 255, 0.3);
+      z-index: 0;
+    }
+
+    header > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      color: #090040;
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    nav a {
+      color: #000;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #FF6F00;
+    }
+
+    .profile-container {
+      max-width: 700px;
+      margin: 50px auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .profile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .profile-header h2 {
+      font-size: 1.5rem;
+    }
+    .edit-button {
+      background: #090040;
+      border: none;
+      color: #fff;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .profile-header i {
+      cursor: pointer;
+      color: #333;
+    }
+
+    .profile-field {
+      background: #e0e0e0;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    footer {
+      position: relative;
+      background-image: url('images/portal.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #000;
+      padding: 30px 40px;
+      z-index: 1;
+    }
+
+    footer::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(255, 255, 255, 0.8);
+      z-index: 0;
+    }
+
+    footer > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    footer h4 {
+      color: #000000;
+      text-decoration: underline;
+    }
+
+    .footer-section a {
+      color: #FF6F00;
+      text-decoration: none;
+    }
+
+    .footer-section a:hover {
+      text-decoration: underline;
+    }
+
+    .social-icons-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .icon-wrapper {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid #FF6F00;
+    }
+
+    .icon-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 10px;
+      font-size: 13px;
+      margin-top: 10px;
+      color: #000;
+    }
+
+    .footer-links {
+      text-align: right;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .footer-links a {
+      color: #6A1E55;
+      text-decoration: underline;
+      margin-left: 12px;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid #aaa;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div style="display: flex; align-items: center; gap: 0.5rem;">
+    <img src="images/logo.png" alt="LMS Logo">
+    <h1>Lernovia Instructor - Dashboard</h1>
+  </div>
+  <nav style="display: flex; gap: 1rem;">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="mycourses.html">Courses</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="settings.html">Settings</a>
+  </nav>
+</header>
+
+<div class="profile-container">
+  <div class="profile-header">
+    <a class="back-button" href="settings.html"> <i class="fas fa-arrow-left"></i>Back to Settings</a>
+    <h2>Communication Settings</h2>
+    <button class="edit-button"><i class="fas fa-edit"></i> Edit</button>
+  </div>
+
+  <div class="profile-field"><strong>Enable direct communication with student:</strong> Enabled</div>
+  <div class="profile-field"><strong>Office hour setup:</strong> 10:00 am to 5:00 pm</div>
+  <div class="profile-field"><strong>Auto reply message after office hours:</strong> Disabled</div>
+</div>
+
+<footer style="padding: 2rem; color: #000000;">
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;">
+    <div style="flex: 1 1 300px;">
+      <div class="footer-section"></div>
+      <h4>Teaching Guidelines</h4>
+      <p>Best practices for creating engaging courses and assessments on Learnovia.</p>
+      <ul style="padding-left: 1rem; list-style-type: disc;">
+        <li>Keep videos short and focused</li>
+        <li>Add quizzes after each module</li>
+        <li>Follow content quality standards</li>
+      </ul>
+    </div>
+    <div style="flex: 1 1 300px;">
+      <h4>Contact</h4>
+      <p>📧 Email: support@learnovia.com</p>
+      <p>📞 Phone: +91 98765 44120</p>
+      <p>📍 Location: Learnovia HQ, Chennai, India</p>
+    </div>
+  </div>
+  </div>
+
+    <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #000000;">
+
+    <div class="footer-section">
+      <h4>Follow us on</h4>
+      <div class="social-icons-row">
+        <div class="icon-wrapper"><img src="images/fb.png" alt="Facebook"></div>
+        <div class="icon-wrapper"><img src="images/wp.png" alt="WhatsApp"></div>
+        <div class="icon-wrapper"><img src="images/tg.png" alt="Telegram"></div>
+        <div class="icon-wrapper"><img src="images/yt.png" alt="YouTube"></div>
+        <div class="icon-wrapper"><img src="images/li.png" alt="LinkedIn"></div>
+        <div class="icon-wrapper"><img src="images/tw.png" alt="Twitter/X"></div>
+      </div>
+    </div>
+
+    <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #000000;">
+
+    <div class="footer-section">
+      <h4>About Lernovia</h4>
+      <p>Lernovia is a leading online learning platform dedicated to providing quality education and skills development programs.</p>
+      <div class="footer-links">
+         <div style="text-align: right; font-size: 15px; margin-top: 10px;">
+      <a href="#" style="color: #1A237E; font-weight: bold; text-decoration: underline; margin-right: 15px;">Download App</a> |
+      <a href="#" style="color: #1A237E; font-weight: bold; text-decoration: underline; margin-left: 10px;">Refer & Earn</a>
+    </div>
+      </div>
+    </div>
+
+    <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #000000;">
+
+    <div class="footer-bottom">
+      © Lernovia 2025. All Rights Reserved. |
+      <a href="#">Terms</a> |
+      <a href="#">Privacy Policy</a>
+    </div>
+  </footer>
+</body>
+</html>

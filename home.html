@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lernovia</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Cambria, Georgia, 'Times New Roman', Times, serif;
+    }
+
+    body {
+      background: #fff;
+      color: #000;
+    }
+
+    /* Header */
+    header {
+      background-color: #f8e9eb;
+      padding: 20px 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #000;
+    }
+    .header-left  {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-left img {
+      height: 40px;
+    }
+
+    .header-left h1 {
+      color: #1A237E;
+      font-size: 24px;
+    }
+     header h1 {
+      font-size: 1.5rem;
+      color: #333;
+      margin: 0;
+    }
+    header > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    nav {
+      display: flex;
+      gap: 40px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      color: #6A1E55;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-image: url('images/home.png');
+      background-size: cover;
+      background-position: center;
+      padding: 250px 30px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      max-width: 850px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* Mission Section */
+    .mission {
+      background-color: #f8e9eb;
+      border-top: 2px solid #000;
+      border-bottom: 2px solid #000;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    /* Footer */
+   footer {
+  position: relative;
+  background-color: #f8e9eb; 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #000;
+  padding: 30px 40px;
+  z-index: 1;
+}
+
+    footer::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    footer > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    footer h4 {
+      color: #000000;
+      text-decoration: underline;
+    }
+
+    .footer-section a {
+      color: #FF6F00;
+      text-decoration: none;
+    }
+
+    .footer-section a:hover {
+      text-decoration: underline;
+    }
+
+    .social-icons-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .icon-wrapper {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid #FF6F00;
+    }
+
+    .icon-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 10px;
+      font-size: 13px;
+      margin-top: 10px;
+      color: #000;
+    }
+
+    .footer-links {
+      text-align: right;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .footer-links a {
+      color: #6A1E55;
+      text-decoration: underline;
+      margin-left: 12px;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid #aaa;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+  <div class="header-left">
+    <img src="images/logo.png" alt="Logo">
+    <h2 tyle="font-size: 1.5rem; color: #090040; margin: 0;">Lernovia</h2>
+  </div>
+  <nav>
+    <a href="about.html">About</a>
+    <a href="home.html">Home</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+  </nav>
+</header>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <h1>"Learn Anytime, Anywhere — Your Future Starts Here"</h1>
+    <p>"Access high-quality courses, expert instructors, and powerful tools to boost your skills and career—all in one place."</p>
+    <p> Empowering students and instructors with a modern, intuitive learning platform.
+    Learn anytime, anywhere, and achieve your academic and professional goals.</p>
+  </section>
+
+  <!-- Mission Statement -->
+  
+
+ <footer style="padding: 2rem; color: #000000;">
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;">
+    <div style="flex: 1 1 300px;">
+        <h4>Contact</h4>
+      <p>📧 Email: support@learnovia.com</p>
+      <p>📞 Phone: +91 98765 44120</p>
+      <p>📍 Location: Learnovia HQ, Chennai, India</p>
+    </div>
+  </div>
+  </div>
+
+    <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #000000;">
+
+    <div class="footer-section">
+      <h4>Follow us on</h4>
+      <div class="social-icons-row">
+        <div class="icon-wrapper"><img src="images/fb.png" alt="Facebook"></div>
+        <div class="icon-wrapper"><img src="images/wp.png" alt="WhatsApp"></div>
+        <div class="icon-wrapper"><img src="images/tg.png" alt="Telegram"></div>
+        <div class="icon-wrapper"><img src="images/yt.png" alt="YouTube"></div>
+        <div class="icon-wrapper"><img src="images/li.png" alt="LinkedIn"></div>
+        <div class="icon-wrapper"><img src="images/tw.png" alt="Twitter/X"></div>
+      </div>
+    </div>
+
+    <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #000000;">
+
+    <div class="footer-section">
+      <h4>About Lernovia</h4>
+      <p>Lernovia is a leading online learning platform dedicated to providing quality education and skills development programs.</p>
+      <div class="footer-links">
+         <div style="text-align: right; font-size: 15px; margin-top: 10px;">
+      <a href="#" style="color: #1A237E; font-weight: bold; text-decoration: underline; margin-right: 15px;">Download App</a> |
+      <a href="#" style="color: #1A237E; font-weight: bold; text-decoration: underline; margin-left: 10px;">Refer & Earn</a>
+    </div>
+      </div>
+    </div>
+
+    <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #000000;">
+
+    <div class="footer-bottom">
+      © Lernovia 2025. All Rights Reserved. |
+      <a href="#">Terms</a> |
+      <a href="#">Privacy Policy</a>
+    </div>
+  </footer>
+</body>
+</html>

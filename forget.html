@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lernovia</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Cambria, Georgia, 'Times New Roman', Times, serif;
+    }
+
+    body {
+      background: #fff;
+      color: #000;
+    }
+
+    header {
+      background-color: #f8e9eb;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #000;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-left img {
+      height: 40px;
+    }
+
+    .header-left h2 {
+      color: #000000;
+      font-size: 24px;
+    }
+
+    header nav {
+      display: flex;
+      gap: 40px;
+    }
+
+    header nav a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      font-size: 18px;
+      padding-bottom: 5px;
+    }
+
+    nav a:hover {
+      color: #6A1E55;
+    }
+
+    .hero {
+      background-image: url('images/home.png');
+      background-size: cover;
+      background-position: center;
+      padding:  350px 30px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 28px;
+      margin-bottom: 12px;
+      font-weight: bold;
+      
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    .login-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 15px;
+      width: 300px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      text-align: center;
+      
+    }
+
+    .login-box input[type="email"],
+    .login-box input[type="password"],
+    .login-box select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      
+    }
+
+    .login-box button {
+      padding: 10px 20px;
+      background-color: #1A237E;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+      width: 100%;
+    }
+    .login-box h2 {
+  color: #000000;
+}
+
+    .login-box button:hover {
+      background-color: #090040;
+    }
+
+    footer {
+      position: relative;
+      background-color: #f8e9eb; 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #000;
+      padding: 30px 40px;
+      z-index: 1;
+    }
+
+    footer::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    footer > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    footer h4 {
+      color: #000000;
+      text-decoration: underline;
+    }
+
+    .footer-section a {
+      color: #FF6F00;
+      text-decoration: none;
+    }
+
+    .footer-section a:hover {
+      text-decoration: underline;
+    }
+
+    .social-icons-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .icon-wrapper {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid #FF6F00;
+    }
+
+    .icon-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 10px;
+      font-size: 13px;
+      margin-top: 10px;
+      color: #000;
+    }
+
+    .footer-links {
+      text-align: right;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .footer-links a {
+      color: #6A1E55;
+      text-decoration: underline;
+      margin-left: 12px;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid #aaa;
+      margin: 20px 0;
+    }
+  </style>
+  <script>
+    function navigateToRole() {
+      const selectedRole = document.getElementById("roleSelect").value;
+      if (selectedRole === "student") {
+        window.location.href = "student.html";
+      } else if (selectedRole === "instructor") {
+        window.location.href = "dashboard.html";
+      } else if (selectedRole === "admin") {
+        window.location.href = "admin.html";
+      }
+    }
+
+    function togglePassword() {
+      const passwordInput = document.getElementById("password");
+      passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <img src="images/logo.png" alt="Logo">
+      <h2>Lernovia</h2>
+    </div>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="home.html">Home</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+    </nav>
+  </header>
+
+  <section class="hero" style="background-image: url('images/home.png'); background-size: cover; background-position: center; padding: 350px 30px; position: relative;">
+  <div style="
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    text-align: center;
+    color: #000;">
+    
+    <h2 style="margin-bottom: 20px;">Forget Password</h2>
+    
+    <input type="email" placeholder="Enter Email-id" required style="
+      width: 100%; padding: 10px; margin: 10px 0; border: none; border-radius: 5px; background: rgba(255,255,255,0.8);">
+    
+    <a href="otp.html" style="
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: rgba(255,255,255,0.8);
+  color: #000;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  text-decoration: none;
+">Send OTP</a>
+  </div>
+</section>
+
+
+
+  <footer style="padding: 2rem; color: #000000;">
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;">
+      <div style="flex: 1 1 300px;">
+        <h4>Contact</h4>
+        <p>📧 Email: support@learnovia.com</p>
+        <p>📞 Phone: +91 98765 44120</p>
+        <p>📍 Location: Learnovia HQ, Chennai, India</p>
+      </div>
+    </div>
+
+    <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #000000;">
+
+    <div class="footer-section">
+      <h4>Follow us on</h4>
+      <div class="social-icons-row">
+        <div class="icon-wrapper"><img src="images/fb.png" alt="Facebook"></div>
+        <div class="icon-wrapper"><img src="images/wp.png" alt="WhatsApp"></div>
+        <div class="icon-wrapper"><img src="images/tg.png" alt="Telegram"></div>
+        <div class="icon-wrapper"><img src="images/yt.png" alt="YouTube"></div>
+        <div class="icon-wrapper"><img src="images/li.png" alt="LinkedIn"></div>
+        <div class="icon-wrapper"><img src="images/tw.png" alt="Twitter/X"></div>
+      </div>
+    </div>
+
+    <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #000000;">
+
+    <div class="footer-section">
+      <h4>About Lernovia</h4>
+      <p>Lernovia is a leading online learning platform dedicated to providing quality education and skills development programs.</p>
+      <div class="footer-links">
+        <div style="text-align: right; font-size: 15px; margin-top: 10px;">
+          <a href="#" style="color: #1A237E; font-weight: bold; text-decoration: underline; margin-right: 15px;">Download App</a> |
+          <a href="#" style="color: #1A237E; font-weight: bold; text-decoration: underline; margin-left: 10px;">Refer & Earn</a>
+        </div>
+      </div>
+    </div>
+
+    <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #000000;">
+
+    <div class="footer-bottom">
+      © Lernovia 2025. All Rights Reserved. |
+      <a href="#">Terms</a> |
+      <a href="#">Privacy Policy</a>
+    </div>
+  </footer>
+</body>
+</html>

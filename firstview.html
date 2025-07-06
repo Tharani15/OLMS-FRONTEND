@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lernovia</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Cambria, Georgia, 'Times New Roman', Times, serif;
+    }
+
+    body {
+      background: #f5f6fa;
+      color: #333;
+    }
+
+    header {
+      background-image: url('images/portal.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 2rem;
+      color: #1A237E;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(255, 255, 255, 0.4);
+      z-index: 0;
+    }
+
+    header > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      margin-left: 10px;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+   nav a {
+  color: #000000;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-weight: 600;
+  font-size: 16px;
+}
+    nav a:hover {
+  color: #FF6F00;
+}
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #eee;
+      border-radius: 8px;
+    }
+
+    .back-link {
+      margin-bottom: 1rem;
+      display: inline-block;
+      font-weight: bold;
+      color: #1A237E;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .back-link i {
+      margin-right: 6px;
+    }
+
+    .container h2 {
+      margin-bottom: 0.5rem;
+      color: #6A1E55;
+    }
+
+    .section {
+      background: #fff;
+      padding: 1.2rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .section h3 {
+      margin-bottom: 0.8rem;
+      color: #1A237E;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.3rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .icon {
+      color: #FF6F00;
+      margin-right: 6px;
+    }
+
+    img.course-banner {
+      width: 100%;
+      max-height: 240px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      position: relative;
+      background-image: url('images/portal.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #000;
+      padding: 30px 40px;
+      z-index: 1;
+    }
+
+    footer::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(255, 255, 255, 0.8);
+      z-index: 0;
+    }
+
+    footer > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    footer h4 {
+      color: #000000;
+      text-decoration: underline;
+    }
+
+    .footer-section a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    .footer-section a:hover {
+      text-decoration: underline;
+    }
+
+    .social-icons-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .icon-wrapper {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid #FF6F00;
+    }
+
+    .icon-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 10px;
+      font-size: 13px;
+      margin-top: 10px;
+      color: #000;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid #aaa;
+      margin: 20px 0;
+    }
+
+    small {
+      display: block;
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div style="display: flex; align-items: center;">
+    <img src="images/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+    <h1 style="font-size: 1.5rem; color: #090040; margin: 0;"> Lernovia Instructor - Courses</h1>
+  </div>
+  <nav  style="display: flex; gap: 1rem;">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="mycourses.html">Courses</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="settings.html">Settings</a>
+  </nav>
+</header>
+
+<div class="container">
+  <a href="mycourses.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Courses</a>
+  <h2>👨‍🏫 Java Essentials for Beginners</h2>
+  <img src="images/java-banner.jpg" class="course-banner" alt="Java Course Banner" />
+
+  <div class="section">
+    <h3><i class="fas fa-book icon"></i> Course Overview</h3>
+    <p>This course provides a comprehensive introduction to Java programming for those new to the language. Starting from the fundamentals, it covers essential concepts and practices needed to write basic Java programs. Students will gain a strong foundation in key areas, object-oriented principles, and hands-on programming techniques — preparing them to explore more advanced topics.</p>
+  </div>
+
+  <div class="section">
+    <h3><i class="fas fa-bullseye icon"></i> Objectives</h3>
+    <ul>
+      <li>Understand Java syntax, structure, and IDEs</li>
+      <li>Learn variables, data types, loops, arrays</li>
+      <li>Build simple real-world applications</li>
+      <li>Debug problems using IDE tools</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3><i class="fas fa-list icon"></i> Syllabus Includes</h3>
+    <ul>
+      <li>Intro to Java: History, features, types</li>
+      <li>Java Syntax, Compiling, IDE</li>
+      <li>Data Types, Operators, Typecasting</li>
+      <li>Conditionals, Loops, Arrays</li>
+      <li>Methods, Parameters, Static/Instance</li>
+      <li>Object Oriented Concepts: Inheritance, Polymorphism</li>
+      <li>String Methods, Exception Handling</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3><i class="fas fa-download icon"></i> Course Resources</h3>
+    <ul>
+      <li>📄 Downloadable Study Notes (PDF)</li>
+      <li>📹 Interactive Video Content</li>
+      <li>🌐 Java Docs and Community Forums</li>
+    </ul>
+  </div>
+</div>
+
+ <footer style="padding: 2rem; color: #000000;">
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;">
+    <div style="flex: 1 1 300px;">
+      <div class="footer-section"></div>
+      <h4>Teaching Guidelines</h4>
+      <p>Best practices for creating engaging courses and assessments on Learnovia.</p>
+      <ul style="padding-left: 1rem; list-style-type: disc;">
+        <li>Keep videos short and focused</li>
+        <li>Add quizzes after each module</li>
+        <li>Follow content quality standards</li>
+      </ul>
+    </div>
+    <div style="flex: 1 1 300px;">
+      <h4>Contact</h4>
+      <p>📧 Email: support@learnovia.com</p>
+      <p>📞 Phone: +91 98765 44120</p>
+      <p>📍 Location: Learnovia HQ, Chennai, India</p>
+    </div>
+  </div>
+  </div>
+
+    <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #000000;">
+
+    <div class="footer-section">
+      <h4>Follow us on</h4>
+      <div class="social-icons-row">
+        <div class="icon-wrapper"><img src="images/fb.png" alt="Facebook"></div>
+        <div class="icon-wrapper"><img src="images/wp.png" alt="WhatsApp"></div>
+        <div class="icon-wrapper"><img src="images/tg.png" alt="Telegram"></div>
+        <div class="icon-wrapper"><img src="images/yt.png" alt="YouTube"></div>
+        <div class="icon-wrapper"><img src="images/li.png" alt="LinkedIn"></div>
+        <div class="icon-wrapper"><img src="images/tw.png" alt="Twitter/X"></div>
+      </div>
+    </div>
+
+    <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #000000;">
+
+    <div class="footer-section">
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;">
+    <div style="flex: 1 1 300px;">
+      <h4>About Learnovia</h4>
+      <p>Lernovia is a leading online learning platform dedicated to providing quality education and skills development programs.</p>
+    </div>
+    <div style="text-align: right; font-size: 15px; margin-top: 10px;">
+      <a href="#" style="color: #1A237E; font-weight: bold; text-decoration: underline; margin-right: 15px;">Download App</a> |
+      <a href="#" style="color: #1A237E; font-weight: bold; text-decoration: underline; margin-left: 10px;">Refer & Earn</a>
+    </div>
+  </div>
+  </div>
+  
+  <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #000000;">
+
+    <div class="footer-bottom">
+      © Lernovia 2025. All Rights Reserved. |
+      <a href="#">Terms</a> |
+      <a href="#">Privacy Policy</a>
+    </div>
+  </footer>
+</body>
+</html>

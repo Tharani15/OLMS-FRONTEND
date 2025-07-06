@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lernovia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Cambria, Georgia, 'Times New Roman', Times, serif;
+    }
+
+    body {
+      background: #f5f6fa;
+      color: #333;
+    }
+
+    header {
+      position: relative;
+      background-image: url('images/portal.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 2rem 1rem;
+      color: #1A237E;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(255, 255, 255, 0.3);
+      z-index: 0;
+    }
+
+    header > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      color: #090040;
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    nav a {
+      color: #000;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #FF6F00;
+    }
+
+    .quiz-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .top-bar button {
+      padding: 10px 16px;
+      border-radius: 5px;
+      border: 1px solid #aaa;
+      background-color: #5d3fd3;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .top-bar select {
+      padding: 10px 16px;
+      border-radius: 5px;
+      border: 1px solid #aaa;
+      background-color: #fff;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .quiz-header {
+      margin: 20px 0;
+    }
+
+    .quiz-header p {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .question {
+      background-color: #f4f4f4;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .question-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .question-left input[type="checkbox"] {
+      transform: scale(1.3);
+    }
+
+    .question-left span {
+      font-size: 15px;
+    }
+
+    .dots-button {
+      background: none;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #1A237E;
+      font-weight: bold;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    footer {
+      position: relative;
+      background-image: url('images/portal.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #000;
+      padding: 30px 40px;
+      z-index: 1;
+    }
+
+    footer::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(255, 255, 255, 0.8);
+      z-index: 0;
+    }
+
+    footer > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    footer h4 {
+      color: #000000;
+      text-decoration: underline;
+    }
+
+    .icon-wrapper {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid #FF6F00;
+    }
+
+    .icon-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .social-icons-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+
+    .footer-links {
+      text-align: right;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .footer-links a {
+      color: #1A237E;
+      text-decoration: underline;
+      margin-left: 12px;
+      font-weight: bold;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid #000;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div style="display: flex; align-items: center; gap: 0.5rem;">
+    <img src="images/logo.png" alt="LMS Logo" />
+    <h1>Lernovia Instructor - Quiz</h1>
+  </div>
+  <nav style="display: flex; gap: 1rem;">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="mycourses.html">Courses</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="settings.html">Settings</a>
+  </nav>
+</header>
+
+<div class="quiz-container">
+  <a class="back-link" href="quiz.html">← Back to Quiz List</a>
+
+  <div class="top-bar">
+    <button onclick="window.location.href='add_question.html'">➕ ADD NEW QUESTIONS</button>
+    <select id="courseSelect">
+      <option value="quiz.html">Java Essentials for Beginners</option>
+      <option value="quiz2.html" >Object-Oriented Programming with JavaP in Java</option>
+      <option value="quiz3.html">Matering Java: From Basics to Advanced</option>
+      <option value="quiz4.html">Java Programming for problem Solving </option>
+      <option value="quiz5.html">Java with Data Structures and Algorithms</option>
+      <option value="quiz6.html">Java GUI Development with Swing and JavaFX</option>
+       <option value="quiz7.html"selected> Java for Web Development: Servlets & JSP</option>
+    </select>
+  </div>
+
+  <div class="quiz-header">
+    <p><strong>Course Title:</strong> Java for Web Development: Servlets & JSP</p>
+    <p><strong>No of Questions:</strong> 10 [ten]</p>
+  </div>
+
+  <div class="question"><div class="question-left"><input type="checkbox" /><span>[MCQ] What is the correct way to declare a variable in Java?</span></div><button class="dots-button">&#x2026;</button></div>
+<div class="question"><div class="question-left"><input type="checkbox" /><span>[MCQ] What is the purpose of method overloading in Java?</span></div><button class="dots-button">&#x2026;</button></div>
+<div class="question"><div class="question-left"><input type="checkbox" /><span>[MCQ] Which keyword is used to inherit a class in Java?</span></div><button class="dots-button">&#x2026;</button></div>
+<div class="question"><div class="question-left"><input type="checkbox" /><span>[True/False] Abstract classes in Java can have constructors.</span></div><button class="dots-button">&#x2026;</button></div>
+<div class="question"><div class="question-left"><input type="checkbox" /><span>[MCQ] What is the default value of an object reference in Java?</span></div><button class="dots-button">&#x2026;</button></div>
+<div class="question"><div class="question-left"><input type="checkbox" /><span>[True/False] The "final" keyword in Java prevents method overriding.</span></div><button class="dots-button">&#x2026;</button></div>
+<div class="question"><div class="question-left"><input type="checkbox" /><span>[MCQ] Which of the following is used for exception handling in Java?</span></div><button class="dots-button">&#x2026;</button></div>
+<div class="question"><div class="question-left"><input type="checkbox" /><span>[MCQ] What is the main advantage of using interfaces?</span></div><button class="dots-button">&#x2026;</button></div>
+<div class="question"><div class="question-left"><input type="checkbox" /><span>[MCQ] Which package contains the "ArrayList" class in Java?</span></div><button class="dots-button">&#x2026;</button></div>
+<div class="question"><div class="question-left"><input type="checkbox" /><span>[True/False] Java supports multiple inheritance using classes.</span></div><button class="dots-button">&#x2026;</button></div>
+
+</div>
+
+<footer style="padding: 2rem; color: #000000;">
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;">
+    <div style="flex: 1 1 300px;">
+      <div class="footer-section"></div>
+      <h4>Teaching Guidelines</h4>
+      <p>Best practices for creating engaging courses and assessments on Learnovia.</p>
+      <ul style="padding-left: 1rem; list-style-type: disc;">
+        <li>Keep videos short and focused</li>
+        <li>Add quizzes after each module</li>
+        <li>Follow content quality standards</li>
+      </ul>
+    </div>
+    <div style="flex: 1 1 300px;">
+      <h4>Contact</h4>
+      <p>📧 Email: support@learnovia.com</p>
+      <p>📞 Phone: +91 98765 44120</p>
+      <p>📍 Location: Learnovia HQ, Chennai, India</p>
+    </div>
+  </div>
+  </div>
+
+    <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #000000;">
+
+    <div class="footer-section">
+      <h4>Follow us on</h4>
+      <div class="social-icons-row">
+        <div class="icon-wrapper"><img src="images/fb.png" alt="Facebook"></div>
+        <div class="icon-wrapper"><img src="images/wp.png" alt="WhatsApp"></div>
+        <div class="icon-wrapper"><img src="images/tg.png" alt="Telegram"></div>
+        <div class="icon-wrapper"><img src="images/yt.png" alt="YouTube"></div>
+        <div class="icon-wrapper"><img src="images/li.png" alt="LinkedIn"></div>
+        <div class="icon-wrapper"><img src="images/tw.png" alt="Twitter/X"></div>
+      </div>
+    </div>
+
+    <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #000000;">
+
+    <div class="footer-section">
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;">
+    <div style="flex: 1 1 300px;">
+      <h4>About Learnovia</h4>
+      <p>Lernovia is a leading online learning platform dedicated to providing quality education and skills development programs.</p>
+    </div>
+    <div style="text-align: right; font-size: 15px; margin-top: 10px;">
+      <a href="#" style="color: #1A237E; font-weight: bold; text-decoration: underline; margin-right: 15px;">Download App</a> |
+      <a href="#" style="color: #1A237E; font-weight: bold; text-decoration: underline; margin-left: 10px;">Refer & Earn</a>
+    </div>
+  </div>
+  </div>
+  
+  <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #000000;">
+
+    <div class="footer-bottom">
+      © Lernovia 2025. All Rights Reserved. |
+      <a href="#">Terms</a> |
+      <a href="#">Privacy Policy</a>
+    </div>
+  </footer>
+
+<script>
+  document.getElementById("courseSelect").addEventListener("change", function () {
+    const selectedPage = this.value;
+    if (selectedPage) {
+      window.location.href = selectedPage;
+    }
+  });
+</script>
+
+</body>
+</html>

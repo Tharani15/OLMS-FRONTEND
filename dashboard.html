@@ -2,113 +2,141 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Instructor Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lernovia</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
+    
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: Cambria, Georgia, 'Times New Roman', Times, serif;
     }
 
     body {
-      font-family: "Times New Roman", serif;
-      background-color: rgba(255,255,255,0.95); 
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      color: #000;
+      background: #f5f6fa;
+      color: #333;
     }
 
-    header {
+   header {
+      position: relative;
+      background-image: url('images/portal.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 2rem 1rem;
+      color: #1A237E;
+      z-index: 1;
       display: flex;
       align-items: center;
-      justify-content: center;
-      padding: 20px 0;
-      background-color: rgba(255,255,255,0.95);
-      position: relative;
+      justify-content: space-between;
     }
 
-    .logo {
+    header::before {
+      content: "";
       position: absolute;
-      left: 30px;
-      top: 15px;
+      inset: 0;
+      background-color: rgba(255, 255, 255, 0.3);
+      z-index: 0;
     }
 
-    .logo img {
-      height: 50px;
-      width: auto;
+    header > * {
+      position: relative;
+      z-index: 1;
     }
 
     header h1 {
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      background-color: rgba(255,255,255,0.9);
-      padding: 12px 0;
-      gap: 150px;
-      border-bottom: 2px solid #aaa;
+      font-size: 1.8rem;
     }
 
     nav a {
+      color: #000000;
       text-decoration: none;
-      color: black;
-      font-weight: bold;
-      font-size: 16px;
+      margin-left: 1rem;
+      font-weight: 600;
+    }
+    nav a:hover {
+  color: #FF6F00;
+}
+
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
 
-    .main {
-      max-width: 1100px;
-      margin: 40px auto;
-      background-color: white;
-      padding: 40px 40px 10px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .welcome-box {
+    .welcome {
+      background: #fff;
+      padding: 1.5rem 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
       text-align: center;
-      font-size: 18px;
-      line-height: 1.6;
-      margin-bottom: 50px;
     }
 
-    .cards {
+    .stats-row {
       display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
       justify-content: space-between;
-      gap: 30px;
-      margin-bottom: 60px;
+    }
+
+
+    .stats-row .card {
+      flex: 1 1 30%;
+      min-width: 280px;
+      max-width: 32%;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
     }
 
     .card {
-      background-color: #f0f0f0;
-      flex: 1;
-      padding: 30px;
-      border-radius: 10px;
-      text-align: center;
-      min-height: 260px;
-      position: relative;
+      background: #fff;
+      padding: 1.2rem 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     }
 
     .card h3 {
-      font-size: 18px;
-      margin-bottom: 15px;
-      font-weight: bold;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
     }
 
-    .course-count {
-      font-size: 22px;
-      font-weight: bold;
+    .card ul {
+      padding-left: 1.2rem;
+      margin: 0;
     }
 
-    .click-view {
-      font-size: 16px;
-      text-decoration: underline;
-      margin-top: 10px;
+    .card button {
+      padding: 0.5rem 1rem;
+      margin-top: 0.5rem;
+      background: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
       cursor: pointer;
+    }
+
+    .card a {
+      color: #3498db;
+      text-decoration: underline;
+      font-weight: 600;
     }
 
     .progress-circle {
@@ -129,309 +157,272 @@
       stroke-width: 10;
     }
 
-    .bg {
+    .progress-circle .bg {
       stroke: #e0e0e0;
     }
 
-    .progress {
+    .progress-circle .progress {
       stroke: #3498db;
       stroke-dasharray: 377;
       stroke-dashoffset: 377;
       transition: stroke-dashoffset 0.5s ease;
+      stroke-linecap: round;
     }
 
-    .percentage {
+    .progress-circle .percentage {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       font-size: 20px;
       font-weight: bold;
+      color: #3498db;
     }
 
-    .task-list {
-      text-align: left;
-      font-size: 16px;
-      padding-left: 20px;
+    footer {
+      position: relative;
+      background-image: url('images/portal.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #000;
+      padding: 30px 40px;
+      z-index: 1;
     }
 
-footer {
-  position: relative;
-  background-image: url('images/portal.jpg'); /* Same image */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: #000;
-  padding: 30px 40px;
-  z-index: 1;
-}
+    footer::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(255, 255, 255, 0.8);
+      z-index: 0;
+    }
 
-footer::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(255, 255, 255, 0.8); /* Soft white overlay */
-  z-index: 0;
-}
+    footer > * {
+      position: relative;
+      z-index: 1;
+    }
+    footer h4 {
+      color: #000000;
+      text-decoration: underline;
+    }
+    .footer-section a:hover {
+      text-decoration: underline;
+    }
 
-footer > * {
-  position: relative;
-  z-index: 1;
-}
-
-.footer-top {
-  display: flex;
-  justify-content: space-between;
-  gap: 50px;
-  flex-wrap: wrap;
-}
-
-.footer-section {
-  flex: 1;
-  min-width: 300px;
-}
-
-.footer-section h4 {
-  font-size: 16px;
-  margin-bottom: 10px;
-  text-decoration: underline;
-}
-
-.footer-section ul {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-.contact-info p {
-  margin: 5px 0;
-  font-size: 14px;
-}
-
-/* Social Media Row */
-.footer-middle {
-  text-align: center;
-  margin: 30px 0 10px;
-}
-
-.social-icons-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  flex-wrap: wrap;
-  margin-top: 15px;
-}
-
-.social-item {
-  text-align: center;
-}
-
-.icon-wrapper {
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+    }
+    .icon-wrapper {
   width: 40px;
   height: 40px;
-  overflow: hidden;
   border-radius: 50%;
-  margin-bottom: 5px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #FF6F00; /* This line adds the orange border */
 }
 
-.icon-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.2s ease;
-}
 
-.icon-wrapper img:hover {
-  transform: scale(1.1);
-}
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
 
-.social-item p {
-  font-size: 12px;
-  margin: 0;
-}
+    .social-icons a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ddd;
+    }
 
-/* Footer Bottom */
-.footer-bottom {
-  text-align: center;
-  padding-top: 10px;
-  font-size: 13px;
-  margin-top: 10px;
-  color: #000;
-}
-
-hr {
-  border: 0;
-  border-top: 1px solid #aaa;
-  margin: 20px 0;
-}
-
-header {
-  position: relative;
-  background-image: url('images/portal.jpg'); /* Rename your uploaded image to this or update path */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 30px 0;
-  color: #000;
-  z-index: 1;
-}
-
-header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(255, 255, 255, 0.8); /* Soft overlay */
-  z-index: 0;
-}
-
-header > * {
-  position: relative;
-  z-index: 1;
-}
-
+    .social-icons img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo">
-      <img src="C:\Users\Home\Downloads\samples\images/logo.png" alt="LMS Logo">
-    </div>
-    <h1>INSTRUCTOR</h1>
-  </header>
-
-  <nav>
-    <a href="#">DASHBOARD</a>
-    <a href="#">MY COURSES</a>
-    <a href="#">QUIZ CREATION</a>
-    <a href="#">SETTINGS</a>
+<header >
+  <div style="display: flex; align-items: center; gap: 0.5rem;">
+    <img src="images/logo.png" alt="LMS Logo" style="height: 40px;">
+    <h1 style="font-size: 1.5rem; color: #090040; margin: 0;">Lernovia Instructor - Dashboard</h1>
+  </div>
+  <nav style="display: flex; gap: 1rem;">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="mycourses.html">Courses</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="settings.html">Settings</a>
   </nav>
+</header>
 
-  <div class="main">
-    <div class="welcome-box">
-      <p>Welcome Back Professor Sunil Sharma !!</p>
-      <p>Your student's had done 80% of their work</p>
-      <p>Progress is really GOOD !!</p>
+<div class="container">
+  <div class="welcome">
+    <h2>Welcome Back, Professor Sunil Sharma!</h2>
+    <p>Your students have completed 80% of their tasks. Great progress!</p>
+  </div>
+
+  <div class="stats-row">
+    <div class="card">
+      <h3>Total Courses</h3>
+      <p>7 [ seven ]</p>
+      <a href="mycourses.html">Click to View</a>
     </div>
 
-    <div class="cards">
-      <!-- Left Card -->
-      <div class="card">
-        <h3>TOTAL COURSES<br>CREATED BY YOU</h3>
-        <div class="course-count">7 [ seven ]</div>
-        <div class="click-view" onclick="alert('Viewing all created courses...')">Click to View</div>
+    <div class="card">
+      <h3>Task Progress</h3>
+      <div class="progress-circle">
+        <svg>
+          <circle class="bg" cx="75" cy="75" r="60" />
+          <circle class="progress" cx="75" cy="75" r="60" />
+        </svg>
+        <div class="percentage">0%</div>
       </div>
+    </div>
 
-      <!-- Center Card with Progress Circle -->
-      <div class="card">
-        <div class="progress-circle">
-          <svg>
-            <circle class="bg" cx="75" cy="75" r="60"/>
-            <circle class="progress" cx="75" cy="75" r="60"/>
-          </svg>
-          <div class="percentage">0%</div>
-        </div>
-        <h3>TASK PROGRESS</h3>
-      </div>
-
-      <!-- Right Card -->
-      <div class="card">
-        <h3>TASK TO BE COMPLETE BY TODAY</h3>
-        <ul class="task-list">
-          <li>Quizzes to review</li>
-          <li>Course drafts not published</li>
-          <li>2 quizzes ungraded</li>
-          <li>1 course draft pending</li>
-        </ul>
-      </div>
+    <div class="card">
+      <h3>Tasks Today</h3>
+      <ul>
+        <li>Quizzes to review</li>
+        <li>Course drafts not published</li>
+        <li>2 quizzes ungraded</li>
+        <li>1 course draft pending</li>
+      </ul>
     </div>
   </div>
 
-  <footer>
-  <!-- Row 1: Guidelines and Contact -->
-  <div class="footer-top">
-    <div class="footer-section">
-      <h4>TEACHING GUIDELINES</h4>
-      <p>Best practices for creating engaging courses and assessments on Learnovia.</p>
-      <p><strong>Examples:</strong></p>
+  <div class="grid">
+    <div class="card">
+      <h3>Student Performance</h3>
+      <p>📊 Average Quiz Score: 78%</p>
+      <p>🏆 Top Performers: 5</p>
+      <p>⚠️ Students Needing Help: 3</p>
+    </div>
+
+    <div class="card">
+      <h3>Upcoming Deadlines</h3>
       <ul>
+        <li>Review Quiz 4 - Due: 05 July</li>
+        <li>Publish "Python Basics" - Due: 06 July</li>
+        <li>Grade Quiz 5 - Due: 08 July</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Recent Queries</h3>
+      <ul>
+        <li>📝 "Can you clarify Q3 in Quiz 2?"</li>
+        <li>📝 "When is next live session?"</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Your Ratings</h3>
+      <p>🌟 4.5 / 5 (Based on 120 reviews)</p>
+      <p>"Very clear explanations!" - A student</p>
+    </div>
+
+    <div class="card">
+      <h3>Resources</h3>
+      <button>📤 Upload Material</button><br>
+      <button>📥 Download Reports</button>
+    </div>
+  </div>
+</div>
+
+<footer style="padding: 2rem; color: #000000;">
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; ">
+    <div style="flex: 1 1 300px;">
+      <h4>Teaching Guidelines</h4>
+      <p>Best practices for creating engaging courses and assessments on Learnovia.</p>
+      <ul style="padding-left: 1rem; list-style-type: disc;">
         <li>Keep videos short and focused</li>
         <li>Add quizzes after each module</li>
         <li>Follow content quality standards</li>
       </ul>
     </div>
-
-    <div class="footer-section">
+    <div style="flex: 1 1 300px;">
       <h4>Contact</h4>
-      <div class="contact-info">
-        <p>📧 Email: support@learnovia.com</p>
-        <p>📞 Phone: +91 98765 44120</p>
-        <p>📍 Location: Learnovia HQ, Chennai, India</p>
-      </div>
+      <p>📧 Email: support@learnovia.com</p>
+      <p>📞 Phone: +91 98765 44120</p>
+      <p>📍 Location: Learnovia HQ, Chennai, India</p>
     </div>
   </div>
 
-  <!-- Horizontal Line -->
-  <hr>
+  <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #000000;">
 
-  <!-- Row 2: Social Icons -->
-  <div class="footer-middle">
-    <h4>FOLLOW US ON</h4>
-    <div class="social-icons-row">
-      <div class="social-item">
-        <div class="icon-wrapper"><img src="images/fb.png" alt="Facebook"></div>
-        <p>Facebook</p>
-      </div>
-      <div class="social-item">
-        <div class="icon-wrapper"><img src="images/ig.png" alt="Instagram"></div>
-        <p>Instagram</p>
-      </div>
-      <div class="social-item">
-        <div class="icon-wrapper"><img src="images/wp.png" alt="WhatsApp"></div>
-        <p>WhatsApp</p>
-      </div>
-      <div class="social-item">
-        <div class="icon-wrapper"><img src="images/tg.png" alt="Telegram"></div>
-        <p>Telegram</p>
-      </div>
+  <div class="social-follow">
+    <h4>Follow us on</h4>
+   <div class="social-icons">
+  <div class="icon-wrapper"><img src="images/fb.png" alt="Facebook"></div>
+  <div class="icon-wrapper"><img src="images/wp.png" alt="WhatsApp"></div>
+  <div class="icon-wrapper"><img src="images/tg.png" alt="Telegram"></div>
+  <div class="icon-wrapper"><img src="images/yt.png" alt="YouTube"></div>
+  <div class="icon-wrapper"><img src="images/li.png" alt="LinkedIn"></div>
+  <div class="icon-wrapper"><img src="images/tw.png" alt="Twitter/X"></div>
+</div>
+
+  </div>
+
+  <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #000000;">
+
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;">
+    <div style="flex: 1 1 300px;">
+      <h4>About Lernovia</h4>
+      <p>Lernovia is a leading online learning platform dedicated to providing quality education and skills development programs.</p>
     </div>
+    <div style="text-align: right; font-size: 15px; margin-top: 10px;">
+  <a href="#" style="color: #1A237E; font-weight: bold; text-decoration: underline; margin-right: 15px;">Download App</a> |
+  <a href="#" style="color: #1A237E; font-weight: bold; text-decoration: underline; margin-left: 10px;">Refer & Earn</a>
+</div>
+
   </div>
 
-  <!-- Horizontal Line -->
-  <hr>
+  <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #000000;">
 
-  <!-- Row 3: Copyright -->
-  <div class="footer-bottom">
-    © 2025 Learnovia LMS. All rights reserved.
-  </div>
+  <small style="display: block; text-align: center;">
+    © Lernovia 2025. All Rights Reserved. |
+    <a href="#">Terms</a> |
+    <a href="#">Privacy Policy</a>
+  </small>
 </footer>
-s
 
-  <!-- JS for Circle Animation -->
-  <script>
-    const percentage = 63;
-    const circle = document.querySelector(".progress");
-    const text = document.querySelector(".percentage");
-    const radius = 60;
-    const circumference = 2 * Math.PI * radius;
+<script>
+  const percentage = 80;
+  const circle = document.querySelector(".progress-circle .progress");
+  const text = document.querySelector(".progress-circle .percentage");
+  const radius = 60;
+  const circumference = 2 * Math.PI * radius;
 
-    circle.style.strokeDasharray = `${circumference}`;
-    circle.style.strokeDashoffset = `${circumference}`;
+  circle.style.strokeDasharray = circumference;
+  circle.style.strokeDashoffset = circumference;
 
-    let current = 0;
-    const speed = 15;
+  let current = 0;
+  const speed = 15;
 
-    const interval = setInterval(() => {
-      if (current <= percentage) {
-        const offset = circumference - (current / 100) * circumference;
-        circle.style.strokeDashoffset = offset;
-        text.textContent = current + "%";
-        current++;
-      } else {
-        clearInterval(interval);
-      }
-    }, speed);
-  </script>
+  const interval = setInterval(() => {
+    if (current <= percentage) {
+      const offset = circumference - (current / 100) * circumference;
+      circle.style.strokeDashoffset = offset;
+      text.textContent = current + "%";
+      current++;
+    } else {
+      clearInterval(interval);
+    }
+  }, speed);
+</script>
 
 </body>
 </html>
