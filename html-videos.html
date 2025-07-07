@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HTML Course - Lessons</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #fff;
+    }
+
+    header {
+      background-image: url('images/portal.jpg');
+      background-size: cover;
+      padding: 1.5em;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 24px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .content {
+      padding: 1.5em;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 24px;
+    }
+
+    .course-img {
+      display: block;
+      margin: auto;
+      width: 90%;
+      border-radius: 10px;
+    }
+
+    .section-title {
+      font-weight: bold;
+      margin: 2em 0 1em;
+      font-size: 18px;
+    }
+
+    .lesson, .material {
+      background: #f1eded;
+      border-radius: 15px;
+      padding: 1em;
+      margin-bottom: 1em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 500;
+    }
+
+    .start-btn {
+      display: block;
+      margin: 2em auto;
+      padding: 15px 40px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 15px;
+      background: #e6e6e6;
+      cursor: pointer;
+    }
+
+    .footer {
+      background-image: url('images/portal.jpg');
+      background-size: cover;
+      color: black;
+      padding: 2em 3em;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer section {
+      width: 30%;
+      min-width: 200px;
+    }
+
+    .footer h4 {
+      margin-bottom: 10px;
+    }
+
+    .footer p, .footer li {
+      font-size: 14px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 1em;
+    }
+
+    .social-icons a {
+      font-size: 20px;
+      color: black;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #007bff;
+    }
+
+    .copyright {
+      text-align: center;
+      padding: 1em;
+      background: #eee;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="html-course.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+  <header>ENROLLED COURSES</header>
+
+  <div class="content">
+    <h1>HTML Basics</h1>
+    <img src="images/html.jpg" class="course-img" alt="HTML">
+
+    <div class="section-title">Learning Videos</div>
+    <div class="lesson">Lesson 1: Introduction <i class="fas fa-play-circle"></i></div>
+    <div class="lesson">Lesson 2: Basic of Tags and Elements <i class="fas fa-play-circle"></i></div>
+    <div class="lesson">Lesson 3: Structuring Web Pages <i class="fas fa-play-circle"></i></div>
+    <div class="lesson">Lesson 4: Forms and Inputs <i class="fas fa-play-circle"></i></div>
+    <div class="lesson">Lesson 5: Media Embedding <i class="fas fa-play-circle"></i></div>
+
+
+ <button class="start-btn" onclick="location.href='html-3.html'">Start Learning</button>
+
+    <div class="section-title">Learning Material</div>
+    <div class="material">Class Teaching Material <i class="fas fa-chevron-right"></i></div>
+    <div class="material">HTML.pdf <i class="fas fa-chevron-right"></i></div>
+  </div>
+
+  <div class="footer">
+    <section>
+      <h4>STUDENT GUIDELINES</h4>
+      <ul>
+        <li>Keep videos short and focused</li>
+        <li>Add quizzes after each module</li>
+        <li>Follow content quality standards</li>
+      </ul>
+    </section>
+    <section>
+      <h4>CONTACT</h4>
+      <p>Email: support@learnovia.com</p>
+      <p>Phone: +91 8765 432100</p>
+      <p>Location: Learnovia HQ, Chennai, India</p>
+    </section>
+    <section>
+      <h4>FOLLOW US ON</h4>
+      <div class="social-icons">
+        <a href="https://wa.me/918765432100"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/learnovia"><i class="fab fa-instagram"></i></a>
+        <a href="https://t.me/learnovia"><i class="fab fa-telegram"></i></a>
+      </div>
+    </section>
+  </div>
+
+  <div class="copyright">
+    © 2025 Learnovia LMS. All rights reserved.
+  </div>
+
+</body>
+</html>

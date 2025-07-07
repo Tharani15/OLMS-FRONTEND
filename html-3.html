@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HTML Quiz</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #fff;
+    }
+
+    header {
+      background-image: url('images/portal.jpg');
+      background-size: cover;
+      padding: 1.5em;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #2a1c0f;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #f2f2f2;
+      border-radius: 20px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .question {
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .question p {
+      font-weight: bold;
+    }
+
+    .options label {
+      display: block;
+      margin-left: 15px;
+      margin-top: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #b07a7a;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    #certificateBtn {
+      display: none;
+    }
+
+    .footer {
+      margin-top: 40px;
+      background-image: url('images/portal.jpg');
+      background-size: cover;
+      padding: 2em 3em;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      color: white;
+    }
+
+    .footer section {
+      width: 30%;
+      min-width: 200px;
+    }
+
+    .footer h4 {
+      margin-bottom: 10px;
+    }
+
+    .footer li, .footer p {
+      font-size: 14px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 20px;
+    }
+
+    .copyright {
+      text-align: center;
+      background: #eee;
+      padding: 1em;
+      font-size: 14px;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 24px;
+      text-decoration: none;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+<a href="courses.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+
+<header>QUIZZ</header>
+
+<div class="container">
+  <h2>HTML Basics Quiz</h2>
+
+  <div class="question">
+    <p>1. What does HTML stand for?</p>
+    <div class="options">
+      <label><input type="radio" name="q1" value="correct" /> Hyper Text Markup Language</label>
+      <label><input type="radio" name="q1" value="wrong" /> Home Tool Markup Language</label>
+      <label><input type="radio" name="q1" value="wrong" /> Hyperlinks Text Markup Language</label>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>2. Which tag is used to create a hyperlink?</p>
+    <div class="options">
+      <label><input type="radio" name="q2" value="wrong" /> &lt;link&gt;</label>
+      <label><input type="radio" name="q2" value="correct" /> &lt;a&gt;</label>
+      <label><input type="radio" name="q2" value="wrong" /> &lt;href&gt;</label>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>3. Which tag is used for a line break?</p>
+    <div class="options">
+      <label><input type="radio" name="q3" value="correct" /> &lt;br&gt;</label>
+      <label><input type="radio" name="q3" value="wrong" /> &lt;lb&gt;</label>
+      <label><input type="radio" name="q3" value="wrong" /> &lt;break&gt;</label>
+    </div>
+  </div>
+
+  <button onclick="submitQuiz()">Submit Quiz</button>
+
+  <div id="result"></div>
+
+  <button id="certificateBtn" onclick="alert('🎓 Certificate Generated!')">Generate Certificate</button>
+</div>
+
+<div class="footer">
+  <section>
+    <h4>STUDENT GUIDELINES</h4>
+    <ul>
+      <li>Keep videos short and focused</li>
+      <li>Add quizzes after each module</li>
+      <li>Follow content quality standards</li>
+    </ul>
+  </section>
+
+  <section>
+    <h4>CONTACT</h4>
+    <p>Email: support@learnovia.com</p>
+    <p>Phone: +91 8765 432100</p>
+    <p>Location: Learnovia HQ, Chennai, India</p>
+  </section>
+
+  <section>
+    <h4>FOLLOW US ON</h4>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-telegram"></i></a>
+    </div>
+  </section>
+</div>
+
+<div class="copyright">
+  © 2025 Learnovia LMS. All rights reserved.
+</div>
+
+<script>
+  function submitQuiz() {
+    const totalQuestions = 3;
+    let score = 0;
+
+    for (let i = 1; i <= totalQuestions; i++) {
+      const answer = document.querySelector(`input[name="q${i}"]:checked`);
+      if (answer && answer.value === "correct") {
+        score++;
+      }
+    }
+
+    const resultEl = document.getElementById("result");
+    const certBtn = document.getElementById("certificateBtn");
+
+    if (score >= 2) {
+      resultEl.innerHTML = `✅ You passed! Score: ${score}/3`;
+      resultEl.style.color = "green";
+      certBtn.style.display = "block";
+    } else {
+      resultEl.innerHTML = `❌ You failed. Score: ${score}/3`;
+      resultEl.style.color = "red";
+      certBtn.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>

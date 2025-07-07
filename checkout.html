@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Checkout Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+    }
+
+    header {
+      background-image: url('images/portal.jpg');
+      background-size: cover;
+      padding: 1.5em;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 24px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .container {
+      padding: 2em;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 1em;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    select, input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0 20px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .payment-methods {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin-bottom: 2em;
+      padding: 1em;
+    }
+
+    .payment-methods label {
+      font-weight: normal;
+      display: block;
+      margin-bottom: 0.8em;
+    }
+
+    .order-summary {
+      background-color: #f5f5f5;
+      padding: 1em;
+      border-radius: 12px;
+      margin-bottom: 1em;
+    }
+
+    .order-summary p {
+      margin: 0.5em 0;
+      font-size: 16px;
+    }
+
+    .pay-btn {
+      background-color: #7e3ff2;
+      color: white;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 15px;
+      border-radius: 12px;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .footer {
+      background-image: url('images/portal.jpg');
+      background-size: cover;
+      color: black;
+      padding: 2em 3em;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer section {
+      width: 30%;
+      min-width: 200px;
+    }
+
+    .footer h4 {
+      margin-bottom: 10px;
+    }
+
+    .footer p, .footer li {
+      font-size: 14px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 1em;
+    }
+
+    .social-icons a {
+      font-size: 20px;
+      color: black;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #007bff;
+    }
+
+    .copyright {
+      text-align: center;
+      padding: 1em;
+      background: #eee;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="html-course.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+  <header>Checkout page</header>
+
+  <div class="container">
+    <h2>Checkout</h2>
+
+    <label>Billing address</label>
+    <div style="display: flex; gap: 20px;">
+      <div style="flex:1;">
+        <label for="country">Country</label>
+        <select id="country">
+          <option>India</option>
+          <option>USA</option>
+          <option>UK</option>
+        </select>
+      </div>
+      <div style="flex:1;">
+        <label for="state">State / Union Territory</label>
+        <select id="state">
+          <option value="">Please select...</option>
+          <option>Tamil Nadu</option>
+          <option>Delhi</option>
+          <option>Maharashtra</option>
+        </select>
+      </div>
+    </div>
+
+    <label>Payment method</label>
+    <div class="payment-methods">
+      <label><input type="radio" name="method" checked> 💳 Cards</label>
+      <input type="text" placeholder="Card number">
+      <div style="display: flex; gap: 10px;">
+        <input type="text" placeholder="MM/YY">
+        <input type="text" placeholder="CVC">
+      </div>
+      <input type="text" placeholder="Name on card">
+      <br/><br/>
+
+      <label><input type="radio" name="method"> 🏦 Net Banking</label>
+      <label><input type="radio" name="method"> 🪙 UPI</label>
+      <label><input type="radio" name="method"> 📱 Mobile Wallet</label>
+    </div>
+
+    <div class="order-summary">
+      <p><strong>Original Price:</strong> ₹3,109</p>
+      <p><strong>Discounts (83% Off):</strong> -₹2,590</p>
+      <hr />
+      <p><strong>Total (1 course):</strong> ₹519</p>
+    </div>
+
+    <button class="pay-btn">🔒 Pay ₹519</button>
+  </div>
+
+  <div class="footer">
+    <section>
+      <h4>STUDENT GUIDELINES</h4>
+      <ul>
+        <li>Keep videos short and focused</li>
+        <li>Add quizzes after each module</li>
+        <li>Follow content quality standards</li>
+      </ul>
+    </section>
+    <section>
+      <h4>CONTACT</h4>
+      <p>Email: support@learnovia.com</p>
+      <p>Phone: +91 8765 432100</p>
+      <p>Location: Learnovia HQ, Chennai, India</p>
+    </section>
+    <section>
+      <h4>FOLLOW US ON</h4>
+      <div class="social-icons">
+        <a href="https://wa.me/918765432100"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/learnovia"><i class="fab fa-instagram"></i></a>
+        <a href="https://t.me/learnovia"><i class="fab fa-telegram"></i></a>
+      </div>
+    </section>
+  </div>
+
+  <div class="copyright">
+    © 2025 Learnovia LMS. All rights reserved.
+  </div>
+
+</body>
+</html>

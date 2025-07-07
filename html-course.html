@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Basics - Enrolled Course</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+    }
+
+    header {
+      background-image: url('images/portal.jpg');
+      background-size: cover;
+      padding: 1em;
+      text-align: center;
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .course-details {
+      text-align: center;
+      padding: 2em;
+    }
+
+    .course-details h1 {
+      font-size: 26px;
+      margin-bottom: 0.5em;
+    }
+
+    .course-details p {
+      font-size: 16px;
+      margin-bottom: 1.5em;
+    }
+
+    .course-img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .features {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 2em;
+      gap: 15px;
+    }
+
+    .feature-btn {
+      background-color: #f1eded;
+      border: none;
+      width: 80%;
+      max-width: 500px;
+      padding: 15px 20px;
+      font-size: 16px;
+      text-align: left;
+      border-radius: 15px;
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .feature-btn i {
+      font-size: 18px;
+    }
+
+    .paid-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 2em 0;
+      gap: 10px;
+    }
+
+    .paid-actions button {
+      background-color: #d4a4a4;
+      color: white;
+      font-weight: bold;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      width: 80%;
+      max-width: 400px;
+    }
+
+    .footer {
+      background-image: url('images/portal.jpg');
+      background-size: cover;
+      color: black;
+      padding: 2em 3em;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer section {
+      width: 30%;
+      min-width: 200px;
+    }
+
+    .footer h4 {
+      margin-bottom: 10px;
+    }
+
+    .footer p, .footer li {
+      font-size: 14px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 1em;
+    }
+
+    .social-icons a {
+      font-size: 20px;
+      color: black;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #007bff;
+    }
+
+    .copyright {
+      text-align: center;
+      padding: 1em;
+      background: #eee;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+
+  <header>ENROLLED COURSES</header>
+  <a href="courses.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+
+  <div class="course-details">
+    <h1>HTML Basics</h1>
+    <p>Learn the fundamentals of HTML and start building web pages today!</p>
+    <img src="images/html.jpg" alt="HTML" class="course-img">
+    <div class="features">
+    <button class="feature-btn" onclick="location.href='html-videos.html'">
+  Learning Videos <i class="fas fa-chevron-right"></i>
+</button>
+      <button class="feature-btn" disabled>
+        Quizz <i class="fas fa-lock"></i>
+      </button>
+      <button class="feature-btn" disabled>
+        Claim your certificate <i class="fas fa-lock"></i>
+      </button>
+    </div>
+
+    <div class="paid-actions">
+      <button onclick="location.href='checkout.html'">Buy Now For Rs.519</button>
+      <button>Add to cart</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <section>
+      <h4>STUDENT GUIDELINES</h4>
+      <ul>
+        <li>Keep videos short and focused</li>
+        <li>Add quizzes after each module</li>
+        <li>Follow content quality standards</li>
+      </ul>
+    </section>
+    <section>
+      <h4>CONTACT</h4>
+      <p>Email: support@learnovia.com</p>
+      <p>Phone: +91 8765 432100</p>
+      <p>Location: Learnovia HQ, Chennai, India</p>
+    </section>
+    <section>
+      <h4>FOLLOW US ON</h4>
+      <div class="social-icons">
+        <a href="https://wa.me/918765432100"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/learnovia"><i class="fab fa-instagram"></i></a>
+        <a href="https://t.me/learnovia"><i class="fab fa-telegram"></i></a>
+      </div>
+    </section>
+  </div>
+
+  <div class="copyright">
+    © 2025 Learnovia LMS. All rights reserved.
+  </div>
+
+</body>
+</html>

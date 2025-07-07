@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Dashboard - Courses</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #fff;
+    }
+
+    header {
+      background-image: url('images/portal.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 1.5em;
+      text-align: center;
+      color: wheat;
+      font-weight: bold;
+      font-size: 24px;
+      letter-spacing: 1px;
+    }
+
+    .dashboard-title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+      margin: 1.5em 0;
+    }
+
+    .course-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      padding: 0 40px 40px;
+      justify-content: center;
+    }
+
+    .course-card {
+      background-color: #f1eded;
+      padding: 1em;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .course-card:hover {
+      transform: scale(1.03);
+    }
+
+    .course-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: contain;
+      margin-bottom: 10px;
+      border-radius: 10px;
+    }
+
+    .course-card h3 {
+      font-size: 18px;
+      margin: 0.5em 0;
+    }
+
+    .course-card p {
+      margin: 4px 0;
+      font-size: 14px;
+    }
+
+    .enroll-btn {
+      background-color: #b07a7a;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .footer {
+      background-image: url('images/portal.jpg');
+      background-size: cover;
+      color: white;
+      padding: 2em 3em;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer section {
+      width: 30%;
+      min-width: 200px;
+    }
+
+    .footer h4 {
+      margin-bottom: 10px;
+    }
+
+    .footer p, .footer li {
+      font-size: 14px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 1em;
+    }
+
+    .social-icons a {
+      font-size: 24px;
+      color: black;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #007bff;
+    }
+
+    .copyright {
+      text-align: center;
+      padding: 1em;
+      background: #eee;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+<a href="index.html" style="position: absolute; top: 15px; left: 15px; font-size: 24px; text-decoration: none; color: black;">
+  <i class="fas fa-arrow-left"></i>
+</a>
+
+  <header>COURSES</header>
+
+  <div class="dashboard-title">Student Dashboard</div>
+
+  <div class="course-container">
+
+    <div class="course-card">
+      <img src="images/html.jpg" alt="HTML">
+      <h3>HTML Basics</h3>
+      <p>Video Lectures: 10</p>
+      <p>Quizzes: 3</p>
+      <p>Certification: Yes</p>
+      <button class="enroll-btn" onclick="location.href='html-course.html'">Enroll</button>
+    </div>
+
+    <div class="course-card">
+      <img src="images/css.png" alt="CSS">
+      <h3>CSS Fundamentals</h3>
+      <p>Video Lectures: 12</p>
+      <p>Quizzes: 4</p>
+      <p>Certification: Yes</p>
+      <button class="enroll-btn" onclick="enroll('CSS Fundamentals')">Enroll</button>
+    </div>
+
+    <div class="course-card">
+      <img src="images/js.jpg" alt="JavaScript">
+      <h3>JavaScript for Beginners</h3>
+      <p>Video Lectures: 15</p>
+      <p>Quizzes: 5</p>
+      <p>Certification: Yes</p>
+      <button class="enroll-btn" onclick="enroll('JavaScript')">Enroll</button>
+    </div>
+
+    <div class="course-card">
+      <img src="images/rjs.jpg" alt="React">
+      <h3>React.js Essentials</h3>
+      <p>Video Lectures: 20</p>
+      <p>Quizzes: 6</p>
+      <p>Certification: Yes</p>
+      <button class="enroll-btn" onclick="enroll('React.js')">Enroll</button>
+    </div>
+
+    <div class="course-card">
+      <img src="images/python.webp" alt="Python">
+      <h3>Python Programming</h3>
+      <p>Video Lectures: 18</p>
+      <p>Quizzes: 5</p>
+      <p>Certification: Yes</p>
+      <button class="enroll-btn" onclick="enroll('Python')">Enroll</button>
+    </div>
+
+    <div class="course-card">
+      <img src="images/ds.jpg" alt="Data Science">
+      <h3>Data Science Essentials</h3>
+      <p>Video Lectures: 25</p>
+      <p>Quizzes: 8</p>
+      <p>Certification: Yes</p>
+      <button class="enroll-btn" onclick="enroll('Data Science')">Enroll</button>
+    </div>
+
+    <div class="course-card">
+      <img src="images/ml.jpg" alt="ML">
+      <h3>Machine Learning Basics</h3>
+      <p>Video Lectures: 22</p>
+      <p>Quizzes: 6</p>
+      <p>Certification: Yes</p>
+      <button class="enroll-btn" onclick="enroll('ML')">Enroll</button>
+    </div>
+
+    <div class="course-card">
+      <img src="images/ui.png" alt="UI/UX">
+      <h3>UI/UX Design</h3>
+      <p>Video Lectures: 14</p>
+      <p>Quizzes: 4</p>
+      <p>Certification: Yes</p>
+      <button class="enroll-btn" onclick="enroll('UI/UX')">Enroll</button>
+    </div>
+
+    <div class="course-card">
+      <img src="images/cyber.webp" alt="Cyber Security">
+      <h3>Cyber Security Fundamentals</h3>
+      <p>Video Lectures: 16</p>
+      <p>Quizzes: 5</p>
+      <p>Certification: Yes</p>
+      <button class="enroll-btn" onclick="enroll('Cyber Security')">Enroll</button>
+    </div>
+
+    <div class="course-card">
+      <img src="images/cloud.jpeg" alt="Cloud">
+      <h3>Cloud Computing</h3>
+      <p>Video Lectures: 20</p>
+      <p>Quizzes: 6</p>
+      <p>Certification: Yes</p>
+      <button class="enroll-btn" onclick="enroll('Cloud Computing')">Enroll</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <section>
+      <h4>STUDENT GUIDELINES</h4>
+      <ul>
+        <li>Keep videos short and focused</li>
+        <li>Add quizzes after each module</li>
+        <li>Follow content quality standards</li>
+      </ul>
+    </section>
+
+    <section>
+      <h4>CONTACT</h4>
+      <p>Email: support@learnovia.com</p>
+      <p>Phone: +91 8765 432100</p>
+      <p>Location: Learnovia HQ, Chennai, India</p>
+    </section>
+
+    <section>
+      <h4>FOLLOW US ON</h4>
+      <div class="social-icons">
+        <a href="https://wa.me/918765432100" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/learnovia" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://t.me/learnovia" target="_blank"><i class="fab fa-telegram"></i></a>
+      </div>
+    </section>
+  </div>
+
+  <div class="copyright">
+    © 2025 Learnovia LMS. All rights reserved.
+  </div>
+
+  <script>
+    function enroll(courseName) {
+      alert("Enrolled in: " + courseName + "\\nRedirecting to course content...");
+      // window.location.href = 'course-detail.html?course=' + encodeURIComponent(courseName);
+    }
+  </script>
+
+</body>
+</html>
