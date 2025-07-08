@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lernovia</title>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Detail - Lernovia</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Cambria, Georgia, 'Times New Roman', Times, serif;
+      font-family: 'Cambria', Georgia, 'Times New Roman', Times, serif;
     }
 
     body {
-      background: #f5f6fa;
-      color: #333;
+      background: #ffffff;
+      color: #1A1A1A;
+      line-height: 1.6;
     }
 
-    header {
+     header {
       background-image: url('images/portal.jpg');
       background-size: cover;
       background-position: center;
@@ -49,10 +50,12 @@
       margin-left: 10px;
     }
 
-    nav {
-      display: flex;
-      gap: 1rem;
-    }
+   nav {
+  display: flex;
+  gap: 1.5rem;
+  margin-left: auto; 
+  margin-right: 2rem; 
+}
 
    nav a {
   color: #000000;
@@ -70,67 +73,116 @@ nav a.active {
   position: relative;
   top: 0; 
 }
+.back-link {
+  font-weight: bold;
+  color: #1A237E;
+  font-size: 18px;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-family: Cambria, Georgia, 'Times New Roman', Times, serif;
+}
+    .course-banner-wrapper {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+}
+
+.course-banner-wrapper img {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.edit-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #3B1C32;
+  font-size: 16px;
+}
+
+.course-banner-wrapper input[type="file"] {
+  display: none;
+}
+
 
     .container {
       max-width: 1000px;
-      margin: 2rem auto;
-      padding: 1rem;
+      margin: 40px auto;
       background: #eee;
-      border-radius: 8px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
     }
-
-    .back-link {
-      margin-bottom: 1rem;
-      display: inline-block;
-      font-weight: bold;
-      color: #1A237E;
-      text-decoration: none;
-      font-size: 16px;
-    }
-
-    .back-link i {
-      margin-right: 6px;
-    }
-
     .container h2 {
       margin-bottom: 0.5rem;
       color: #6A1E55;
     }
 
-    .section {
-      background: #fff;
-      padding: 1.2rem;
-      margin-bottom: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    .section-title {
+      font-size: 20px;
+      background-color: #E8EAF6;
+      padding: 10px 15px;
+      border-left: 6px solid 1A237E;
+      margin: 30px 0 10px;
+      color: #3B1C32;
+      font-weight: bold;
     }
-
-    .section h3 {
+    .editable-section h2 {
       margin-bottom: 0.8rem;
       color: #1A237E;
       border-bottom: 1px solid #ccc;
       padding-bottom: 0.3rem;
     }
 
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    li {
-      margin-bottom: 6px;
-    }
-
-    .icon {
-      color: #FF6F00;
-      margin-right: 6px;
-    }
-
-    img.course-banner {
+    .editable-section textarea {
       width: 100%;
-      max-height: 240px;
-      object-fit: cover;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      resize: vertical;
+      margin-bottom: 20px;
+      background: #f4f6f8;
+    }
+
+    .editable-section input[type="file"] {
+      margin: 10px 0;
+    }
+
+    .pdf-list, .media-list {
+      margin-bottom: 20px;
+    }
+
+    .pdf-item, .media-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background: #f8e9eb;
+      margin-bottom: 10px;
       border-radius: 6px;
-      margin-bottom: 1rem;
+    }
+
+    .btn {
+      background: #3498db;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #A64D79;
     }
 
     footer {
@@ -218,8 +270,7 @@ nav a.active {
   </style>
 </head>
 <body>
-
-<header>
+  <header>
   <div style="display: flex; align-items: center;">
     <img src="images/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
     <h1 style="font-size: 1.5rem; color: #090040; margin: 0;"> Lernovia Instructor - Courses</h1>
@@ -232,53 +283,57 @@ nav a.active {
   </nav>
 </header>
 
-<div class="container">
-  <a href="mycourses.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Courses</a>
+  <div class="container">
+    <a href="mycourses.html" class="back-link"></i> Back to Courses</a>
   <h2>👨‍🏫 Object-Oriented Programming with Java</h2>
-
-
-  <img src="images/inherit.jpg" class="course-banner" alt="Java Course Banner" />
-
-
-  <div class="section">
-    <h3><i class="fas fa-book icon"></i> Course Overview</h3>
-    <p>This course provides a comprehensive introduction to Java programming for those new to the language. Starting from the fundamentals, it covers essential concepts and practices needed to write basic Java programs. Students will gain a strong foundation in key areas, object-oriented principles, and hands-on programming techniques — preparing them to explore more advanced topics.</p>
-  </div>
-
-  <div class="section">
-    <h3><i class="fas fa-bullseye icon"></i> Objectives</h3>
-    <ul>
-      <li>Understand Java syntax, structure, and IDEs</li>
-      <li>Learn variables, data types, loops, arrays</li>
-      <li>Build simple real-world applications</li>
-      <li>Debug problems using IDE tools</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h3><i class="fas fa-list icon"></i> Syllabus Includes</h3>
-    <ul>
-      <li>Intro to Java: History, features, types</li>
-      <li>Java Syntax, Compiling, IDE</li>
-      <li>Data Types, Operators, Typecasting</li>
-      <li>Conditionals, Loops, Arrays</li>
-      <li>Methods, Parameters, Static/Instance</li>
-      <li>Object Oriented Concepts: Inheritance, Polymorphism</li>
-      <li>String Methods, Exception Handling</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h3><i class="fas fa-download icon"></i> Course Resources</h3>
-    <ul>
-      <li>📄 Downloadable Study Notes (PDF)</li>
-      <li>📹 Interactive Video Content</li>
-      <li>🌐 Java Docs and Community Forums</li>
-    </ul>
-  </div>
+  <div class="course-banner-wrapper">
+  <label for="banner-upload">
+    <img src="images/inherit.jpg" class="course-banner" alt="Java Course Banner" />
+    <i class="fas fa-edit edit-icon"></i>
+  </label>
+  <input type="file" id="banner-upload" accept="image/*">
 </div>
 
- <footer style="padding: 2rem; color: #000000;">
+    <div class="editable-section">
+      <h2 class="section-title">Course Overview</h2>
+      <textarea rows="4">This course provides a comprehensive introduction to Java programming for those new to the language. Starting from the fundamentals, it covers essential concepts and practices needed to write basic Java programs...</textarea>
+    </div>
+
+    <div class="editable-section">
+      <h2 class="section-title">Objectives</h2>
+      <textarea rows="4">• Understand Java syntax, structure, and IDEs
+• Learn variables, data types, loops, arrays
+• Build simple real-world applications
+• Debug problems using IDE tools</textarea>
+    </div>
+
+    <div class="editable-section">
+      <h2 class="section-title">Syllabus Includes</h2>
+      <textarea rows="6">• Intro to Java: History, features, types
+• Java Syntax, Compiling, IDE
+• Data Types, Operators, Typecasting
+• Conditionals, Loops, Arrays
+• Methods, Parameters, Static/Instance
+• Object Oriented Concepts: Inheritance, Polymorphism
+• String Methods, Exception Handling</textarea>
+    </div>
+
+    <div class="editable-section">
+      <h2 class="section-title">Course Resources</h2>
+      <input type="file" id="pdf-upload">
+      <div class="pdf-list" id="pdf-list"></div>
+    </div>
+
+    <div class="editable-section">
+      <h2 class="section-title">Upload Images/Videos</h2>
+      <input type="file" id="media-upload" accept="image/*,video/*">
+      <div class="media-list" id="media-list"></div>
+    </div>
+
+    <button class="btn" onclick="saveEdits()">💾 Save Changes</button>
+  </div>
+
+  <footer style="padding: 2rem; color: #000000;">
   <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;">
     <div style="flex: 1 1 300px;">
       <div class="footer-section"></div>
@@ -336,5 +391,45 @@ nav a.active {
       <a href="#">Privacy Policy</a>
     </div>
   </footer>
+  <script>
+    function saveEdits() {
+      alert("Your changes have been saved successfully!");
+    }
+
+    const uploadInput = document.getElementById("pdf-upload");
+    const pdfList = document.getElementById("pdf-list");
+
+    uploadInput.addEventListener("change", function() {
+      const file = this.files[0];
+      if (file) {
+        const listItem = document.createElement("div");
+        listItem.className = "pdf-item";
+        listItem.innerHTML = `
+          <span>📄 ${file.name}</span>
+          <button class="btn" onclick="this.parentElement.remove()">🗑️ Delete</button>
+        `;
+        pdfList.appendChild(listItem);
+        this.value = null;
+      }
+    });
+
+    const mediaInput = document.getElementById("media-upload");
+    const mediaList = document.getElementById("media-list");
+
+    mediaInput.addEventListener("change", function() {
+      const file = this.files[0];
+      if (file) {
+        const listItem = document.createElement("div");
+        listItem.className = "media-item";
+        const mediaType = file.type.startsWith("image") ? "🖼️" : "🎥";
+        listItem.innerHTML = `
+          <span>${mediaType} ${file.name}</span>
+          <button class="btn" onclick="this.parentElement.remove()">🗑️ Delete</button>
+        `;
+        mediaList.appendChild(listItem);
+        this.value = null;
+      }
+    });
+  </script>
 </body>
 </html>
