@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Basic Information - User Management</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+    :root {
+      --beige-pink: #d9b8b8;
+      --light: #f5f5f5;
+      --text-dark: #000;
+      --hover-pink: #c6a2a2;
+      --shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text-dark);
+    }
+
+    header {
+      background-color: var(--beige-pink);
+      padding: 20px 40px;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .back-button {
+      font-size: 22px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-dark);
+      margin-right: 20px;
+    }
+
+    header h1 {
+      margin: 0 auto;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      padding: 30px;
+      gap: 40px;
+    }
+
+    .sidebar {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 20px;
+      border-radius: 10px;
+      width: 230px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      background: var(--light);
+      padding: 10px 15px;
+      border-radius: 6px;
+      color: var(--text-dark);
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover, .sidebar a.active {
+      background: var(--beige-pink);
+      font-weight: 600;
+    }
+
+    .info-card {
+      background: var(--beige-pink);
+      padding: 30px;
+      border-radius: 15px;
+      width: 55%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      box-shadow: var(--shadow);
+    }
+
+    .info-text {
+      max-width: 60%;
+    }
+
+    .info-text h2 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    .info-text p {
+      margin: 10px 0;
+    }
+
+    .user-image {
+      width: 300px;
+      height: 300px;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-left: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    footer {
+      background-color: var(--beige-pink);
+      padding: 30px 60px;
+      font-size: 14px;
+      color: var(--text-dark);
+      box-shadow: var(--shadow);
+    }
+
+    footer .footer-top {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #000;
+      padding-bottom: 20px;
+    }
+
+    .footer-grid {
+      display: flex;
+      gap: 15px;
+      font-size: 20px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    footer .bottom-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    footer .footer-note {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 12px;
+    }
+
+     .footer-icon,
+    footer a {
+      color: #6a1b9a;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-icon:hover,
+    footer a:hover {
+      color: #4a148c;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="user-management.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+    <h1>User Management</h1>
+  </header>
+
+  <div class="container">
+    <div class="sidebar">
+      <a href="basic-information.html" class="active">Basic Information</a>
+      <a href="role-permissions2.html">Role and Permissions</a>
+      <a href="#">Activity Overview</a>
+      <a href="#">Interaction History</a>
+      <a href="#">Account Management Actions</a>
+    </div>
+
+    <div class="info-card">
+      <div class="info-text">
+        <h2>Basic Information</h2>
+        <p><strong>Full Name:</strong> John Mathews</p>
+        <p><strong>Email Address:</strong> john.mathews@example.com</p>
+        <p><strong>Phone Number:</strong> +91-9876504321</p>
+        <p><strong>User ID:</strong> U10234</p>
+      </div>
+      <img class="user-image" src="data:image/webp;base64,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" alt="User Image" />
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div>
+        <h3><u>Admin Guidelines</u></h3>
+        <p>● Ensure smooth platform operation by monitoring user activities.</p>
+        <p>● Review and approve instructor-submitted course proposals.</p>
+        <p>● Maintain secure financial records through Payment and Subscription Management.</p>
+        <p>● Address user feedback and support queries efficiently.</p>
+        <p>● Regularly update platform settings and configurations.</p>
+      </div>
+      <div>
+        <h3><u>Contact</u></h3>
+        <p>Email: support@lernovia.com</p>
+        <p>📞 Phone: +91 98765 44120</p>
+        <p>📍 Location: Lernovia HQ, Chennai, India</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin: 20px 0; border-bottom: 1px solid #000; padding-bottom: 10px;">
+      <h3><u>Follow us on</u></h3>
+      <div style="display: flex; justify-content: center; gap: 20px; margin-top: 10px; font-size: 22px;">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-telegram"></i></a>
+        <a href="#"><i class="fab fa-google"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="bottom-bar">
+      <p><strong>About Lernovia</strong><br>
+        Lernovia is a leading online learning platform dedicated to providing quality education and skills development programs.</p>
+      <div>
+        <a href="#" style="margin-right: 15px;">Download App</a> |
+        <a href="#" style="margin-left: 15px;">Refer & Earn</a>
+      </div>
+    </div>
+
+    <p class="footer-note">© Lernovia 2025. All Rights Reserved. | <a href="#">Terms</a> | <a href="#">Privacy Policy</a></p>
+  </footer>
+
+</body>
+</html>

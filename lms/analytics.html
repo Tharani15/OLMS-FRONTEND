@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Report and Analytics</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1554224154-22dec7ec8818') no-repeat center center fixed;
+      background-size: cover;
+      color: #000;
+    }
+
+    :root {
+      --beige-pink: #D9B8B8;
+      --hover-pink: #c6a2a2;
+      --text-dark: #000;
+      --shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    header {
+      background-color: var(--beige-pink);
+      padding: 20px;
+      position: relative;
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .back-arrow {
+  position: fixed;          /* Keep it in place while scrolling */
+  top: 50%;                 /* Vertically center */
+  left: 30px;               /* Distance from the left side */
+  transform: translateY(-50%);
+  background: white;
+  border-radius: 50%;
+  padding: 12px;
+  font-size: 20px;
+  color: black;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* soft shadow like your screenshot */
+  z-index: 999;             /* Keep above all content */
+  transition: background 0.3s ease;
+}
+
+.back-arrow:hover {
+  background-color: #f0f0f0;
+}
+
+    .accordion-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .accordion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--beige-pink);
+  color: #000;
+  cursor: pointer;
+  padding: 15px 20px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.accordion:hover {
+  background-color: var(--hover-pink);
+}
+
+.accordion-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.accordion.active .arrow {
+  transform: rotate(180deg);
+}
+
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0 20px;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+
+.panel.open {
+  padding: 3px 20px;
+}
+.panel a div {
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.panel a div:hover {
+  background-color: #f0f0f0;
+}
+
+    footer {
+      background-color: var(--beige-pink);
+      padding: 30px 60px;
+      font-size: 14px;
+      color: var(--text-dark);
+      box-shadow: var(--shadow);
+      margin-top: 50px;
+    }
+
+    footer h3 {
+      margin-top: 0;
+    }
+
+    .footer-columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      border-bottom: 1px solid #000;
+      padding-bottom: 20px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      font-size: 22px;
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      color: #555;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    @media screen and (max-width: 600px) {
+      .footer-columns {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+    .footer-icon,
+    footer a {
+      color: #6a1b9a;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-icon:hover,
+    footer a:hover {
+      color: #4a148c;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="admin-dashboard.html" class="back-arrow"><i class="fas fa-arrow-left"></i></a>
+    Report and Analytics
+  </header>
+
+  <!-- Accordion Section -->
+ <div class="accordion-container">
+  <button class="accordion">
+    <i class="fas fa-chart-pie"></i> Activity Summary Report <i class="fas fa-chevron-down arrow"></i>
+  </button>
+  <div class="panel">
+  <a href="activity-sum.html" style="text-decoration: none; color: inherit; display: block;">
+    <div style="padding: 15px; background-color: #fff; border-radius: 8px; margin: 10px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+      This section contains a high-level summary of platform-wide activity.
+    </div>
+  </a>
+</div>
+
+  <button class="accordion">
+    <i class="fas fa-user-clock"></i> User Activity Logs <i class="fas fa-chevron-down arrow"></i>
+  </button>
+  <div class="panel">
+    <p>Detailed logs of individual user interactions and session history.</p>
+  </div>
+
+  <button class="accordion">
+    <i class="fas fa-bug"></i> System Error Logs <i class="fas fa-chevron-down arrow"></i>
+  </button>
+  <div class="panel">
+    <p>View logs of any system-generated errors for debugging and tracking.</p>
+  </div>
+
+  <button class="accordion">
+    <i class="fas fa-sign-in-alt"></i> Login History Report <i class="fas fa-chevron-down arrow"></i>
+  </button>
+  <div class="panel">
+    <p>Track login attempts by users with timestamps and IP addresses.</p>
+  </div>
+
+  <button class="accordion">
+    <i class="fas fa-file-alt"></i> Quiz Performance Report <i class="fas fa-chevron-down arrow"></i>
+  </button>
+  <div class="panel">
+    <p>Analyze quiz results, attempts, scores, and completion rates.</p>
+  </div>
+
+  <button class="accordion">
+    <i class="fas fa-graduation-cap"></i> Course Completion Report <i class="fas fa-chevron-down arrow"></i>
+  </button>
+  <div class="panel">
+    <p>Monitor course completion trends and identify drop-offs.</p>
+  </div>
+
+  <button class="accordion">
+    <i class="fas fa-chalkboard-teacher"></i> Instructor Activity Log <i class="fas fa-chevron-down arrow"></i>
+  </button>
+  <div class="panel">
+    <p>Overview of instructor logins, course updates, and engagement.</p>
+  </div>
+
+  <button class="accordion">
+    <i class="fas fa-users"></i> Student Engagement Report <i class="fas fa-chevron-down arrow"></i>
+  </button>
+  <div class="panel">
+    <p>Insights on time spent, quiz attempts, discussions, and more.</p>
+  </div>
+</div>
+
+  <!-- Footer -->
+ <footer>
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; border-bottom: 1px solid #000; padding-bottom: 20px;">
+      <div>
+        <h3><u>Admin Guidelines</u></h3>
+        <p>● Ensure smooth platform operation by monitoring user activities.</p>
+        <p>● Review and approve instructor-submitted course proposals.</p>
+        <p>● Maintain secure financial records through Payment and Subscription Management.</p>
+        <p>● Address user feedback and support queries efficiently.</p>
+        <p>● Regularly update platform settings and configurations.</p>
+      </div>
+      <div>
+        <h3><u>Contact</u></h3>
+        <p>Email: support@lernovia.com</p>
+        <p>📞 Phone: +91 98765 44120</p>
+        <p>📍 Location: Lernovia HQ, Chennai, India</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin: 20px 0; border-bottom: 1px solid #000; padding-bottom: 10px;">
+      <h3><u>Follow us on</u></h3>
+      <div style="display: flex; justify-content: center; gap: 20px; margin-top: 10px; font-size: 22px;">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-telegram"></i></a>
+        <a href="#"><i class="fab fa-google"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center;">
+      <p><strong>About Lernovia</strong><br>
+        Lernovia is a leading online learning platform dedicated to providing quality education and skills development programs.</p>
+      <div>
+        <a href="#" style="margin-right: 15px;">Download App</a> |
+        <a href="#" style="margin-left: 15px;">Refer & Earn</a>
+      </div>
+    </div>
+
+    <p style="text-align: center;">© Lernovia 2025. All Rights Reserved. | <a href="#">Terms</a> | <a href="#">Privacy Policy</a></p>
+  </footer>
+
+  <!-- JavaScript for Accordion -->
+  <script>
+  const accordions = document.querySelectorAll(".accordion");
+
+  accordions.forEach((accordion) => {
+    accordion.addEventListener("click", function () {
+      this.classList.toggle("active");
+
+      const panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+        panel.classList.remove("open");
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+        panel.classList.add("open");
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
